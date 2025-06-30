@@ -20,6 +20,6 @@ jobs:
 
     - name: Subir archivos al servidor
       run: |
-        rsync -avz --delete ./ deploy@upgradelab.tech:/var/www/upgradelab.tech/html/
+        rsync -avz --delete ./ deploy@168.119.63.13:/var/www/upgradelab.tech/html/
       env:
         RSYNC_RSH: ssh
