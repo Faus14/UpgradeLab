@@ -18,6 +18,11 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+    - name: Agregar host a known_hosts
+      run: |
+        mkdir -p ~/.ssh
+        echo "168.119.63.13 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILD48cBz1Z2G2khdjidGS7qZGNaoZCnrUBIS0FdEuJyR" >> ~/.ssh/known_hosts
+
     - name: Subir archivos al servidor
       run: |
         rsync -avz --delete ./ deploy@168.119.63.13:/var/www/upgradelab.tech/html/
