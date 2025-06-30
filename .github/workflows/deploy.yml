@@ -1,0 +1,25 @@
+name: Deploy HTML a upgradelab.tech
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar el repositorio
+      uses: actions/checkout@v3
+
+    - name: Activar SSH
+      uses: webfactory/ssh-agent@v0.8.1
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Subir archivos al servidor
+      run: |
+        rsync -avz --delete ./ deploy@upgradelab.tech:/var/www/upgradelab.tech/html/
+      env:
+        RSYNC_RSH: ssh
