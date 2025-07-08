@@ -230,3 +230,40 @@ header > .collapsible-header{
     }
     
 }
+
+
+
+/* ================================== */
+/* ===== Estilos Botón WhatsApp ===== */
+/* ================================== */
+
+.whatsapp-flotante {
+    /* --- Posición y Visibilidad --- */
+    position: fixed; /* Lo deja fijo en la pantalla */
+    bottom: 25px;    /* Distancia desde abajo */
+    right: 25px;     /* Distancia desde la derecha */
+    z-index: 100;    /* Se asegura de que esté por encima de otros elementos */
+
+    /* --- Apariencia del botón --- */
+    width: 60px;
+    height: 60px;
+    background-color: #25D366; /* Color oficial de WhatsApp */
+    color: #FFF;               /* Color del ícono (blanco) */
+    border-radius: 50%;         /* Lo hace perfectamente redondo */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para darle profundidad */
+    
+    /* --- Contenido (el ícono) --- */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px; /* Tamaño del ícono de WhatsApp */
+
+    /* --- Animación --- */
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por encima */
+.whatsapp-flotante:hover {
+    transform: scale(1.1); /* Lo agranda un poco */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3); /* Acentúa la sombra */
+}
